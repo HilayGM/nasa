@@ -31,6 +31,106 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
+  position: relative;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  backdrop-filter: none !important;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  padding: 2rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.hero h1, .hero p {
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Asegurarse de que no hay fondos ni bordes en los elementos hijos */
+.hero * {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  will-change: transform, opacity;
+  color: #fff;
+  background: transparent !important;
+}
+
+.hero h1 span,
+.hero p span {
+  display: inline-block;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  will-change: transform, opacity;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.95;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+  will-change: transform, opacity;
+  color: #fff;
+  background: transparent !important;
+}
+
+/* Efecto de cursor parpadeante */
+.hero h1::after,
+.hero p::after {
+  content: '|';
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.7s infinite;
+  opacity: 0;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Efecto de brillo en el texto */
+.hero h1 span {
+  text-shadow: 0 0 0px #fff;
+  transition: text-shadow 0.3s ease;
+}
+
+.hero h1 span:hover {
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+    white-space: normal;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    white-space: normal;
+  }
 }
 
 /* Grid de características */
@@ -115,33 +215,83 @@
   color: white;
 }
 
-/* Estilos para la sección APOD */
-.apodContainer {
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-top: 2rem;
+/* ==================== */
+/* Estilos APOD Modernos */
+/* ==================== */
+
+/* Sección principal */
+.apodSection {
+  width: 100%;
+  padding: 4rem 0;
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Contenedor de medios (imagen/video) */
-.mediaContainer {
-  margin: 2rem 0;
-  border-radius: 12px;
+.apodGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+/* Encabezado */
+.apodHeader {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.apodDate {
+  font-size: 0.9rem;
+  color: #8a8f98;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.apodTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+  color: #fff;
+  max-width: 800px;
+}
+
+/* Contenedor de medios */
+.mediaWrapper {
+  width: 100%;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Estilos para la imagen */
-.imageWrapper {
+.mediaWrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen */
+.imageContainer {
   position: relative;
   width: 100%;
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  overflow: hidden;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Video */
+.videoContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background: #000;
 }
 
 .media {
@@ -151,34 +301,101 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-/* Estilos para el video */
-.videoWrapper {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  overflow: hidden;
-}
-
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* Estilos para el texto */
-.explanation {
-  margin-top: 2rem;
-  text-align: left;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
+/* Contenido */
+.apodContent {
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  color: #e0e0e0;
+  line-height: 1.8;
+}
+
+.apodExplanation {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.paragraph {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.paragraph:not(:last-child) {
+  margin-bottom: 1.8rem;
+}
+
+.paragraph::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.8em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4f9fff;
+  opacity: 0.8;
+}
+
+/* Créditos */
+.credit {
+  font-size: 0.95rem;
+  color: #8a8f98;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.creditLabel {
+  color: #4f9fff;
+  font-weight: 500;
+}
+
+.creditName {
+  color: #b0b4c0;
+  font-style: normal;
+}
+
+/* Efectos de hover */
+.mediaWrapper:hover .media {
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .apodSection {
+    padding: 3rem 0;
+  }
+  
+  .apodGrid {
+    padding: 0 1.5rem;
+    gap: 2rem;
+  }
+  
+  .apodTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .apodContent {
+    font-size: 1rem;
+  }
+  
+  .apodExplanation {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .paragraph {
+    padding-left: 1rem;
+  }
+  
+  .paragraph::before {
+    width: 4px;
+    height: 4px;
+    top: 0.7em;
+  }
 }
 
 .copyright {
@@ -329,3 +546,443 @@ a.secondary {
 }
 
 
+/* Estilos para la sección de carga */
+.loadingContainer {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.loadingAnimation {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 2rem;
+}
+
+.loadingOrbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(79, 159, 255, 0.2);
+  border-radius: 50%;
+  animation: orbit 4s linear infinite;
+}
+
+.loadingPlanet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: #4f9fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(79, 159, 255, 0.8);
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.loadingText {
+  font-size: 1.2rem;
+  color: #8a8f98;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}
+
+/* Estilos para la sección de error */
+.errorContainer {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 88, 88, 0.1);
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.errorIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.errorContainer h3 {
+  color: #ff5858;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.retryButton {
+  background: #4f9fff;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.retryButton:hover {
+  background: #3a8cff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(79, 159, 255, 0.3);
+}
+
+/* Estilos mejorados para la sección APOD */
+.apodSection {
+  position: relative;
+  width: 100%;
+  padding: 6rem 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 12, 18, 0.8) 0%,
+    rgba(10, 12, 18, 0.95) 100%
+  );
+  overflow: hidden;
+}
+
+.apodSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(79, 159, 255, 0.2),
+    transparent
+  );
+}
+
+.apodGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Encabezado mejorado */
+.apodHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.dateBadge {
+  display: inline-block;
+  background: rgba(79, 159, 255, 0.1);
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(79, 159, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.apodDate {
+  font-size: 0.9rem;
+  color: #8a8f98;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.apodTitle {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin: 0 auto;
+  line-height: 1.2;
+  color: #fff;
+  max-width: 900px;
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.titleLine {
+  display: inline-block;
+  position: relative;
+}
+
+.titleWord {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Contenedor de medios mejorado */
+.mediaWrapper {
+  position: relative;
+  width: 100%;
+  margin: 3rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.mediaContainer {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.imageContainer, .videoContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.imageOverlay, .videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 12, 18, 0.1) 0%,
+    rgba(10, 12, 18, 0.7) 100%
+  );
+  z-index: 1;
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+}
+
+.mediaGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(79, 159, 255, 0.1) 0%,
+    transparent 70%
+  );
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.mediaWrapper:hover .mediaGlow {
+  opacity: 1;
+}
+
+.mediaWrapper:hover .media {
+  transform: scale(1.03);
+}
+
+.mediaWrapper:hover .imageOverlay,
+.mediaWrapper:hover .videoOverlay {
+  opacity: 0.3;
+}
+
+/* Contenido mejorado */
+.apodContent {
+  max-width: 800px;
+  margin: 6rem auto 0;
+  position: relative;
+}
+
+.scrollIndicator {
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 50px;
+  background: linear-gradient(
+    to bottom,
+    #4f9fff,
+    rgba(79, 159, 255, 0)
+  );
+  opacity: 0.5;
+}
+
+.apodExplanation {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  position: relative;
+}
+
+.paragraphContainer {
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.paragraph {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.paragraph::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  color: #4f9fff;
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+.paragraphDivider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  margin: 2rem 0;
+}
+
+/* Sección de créditos */
+.creditSection {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.creditBadge {
+  display: inline-flex;
+  flex-direction: column;
+  background: rgba(79, 159, 255, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(79, 159, 255, 0.2);
+}
+
+.creditLabel {
+  font-size: 0.8rem;
+  color: #8a8f98;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+
+.creditName {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Indicador de desplazamiento */
+.scrollForMore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  color: #8a8f98;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+.scrollArrow {
+  width: 20px;
+  height: 30px;
+  border: 2px solid #4f9fff;
+  border-radius: 10px;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.scrollArrow::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: #4f9fff;
+  border-radius: 2px;
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 10px);
+    opacity: 0;
+  }
+}
+
+/* Efectos de hover y animaciones */
+@media (hover: hover) {
+  .apodSection {
+    transition: background 0.5s ease;
+  }
+  
+  .apodSection:hover {
+    background: rgba(10, 12, 18, 0.98);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .apodSection {
+    padding: 4rem 0;
+  }
+  
+  .apodHeader {
+    margin-bottom: 3rem;
+  }
+  
+  .apodTitle {
+    font-size: 2rem;
+  }
+  
+  .paragraph {
+    padding-left: 1.5rem;
+  }
+  
+  .scrollForMore {
+    margin-top: 3rem;
+  }
+}
