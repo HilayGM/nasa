@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NASA Astronomy Picture of the Day",
+  title: "NASA NOW",
   description: "Descubre la imagen astronómica del día proporcionada por la NASA",
 };
 

@@ -49,7 +49,8 @@
   box-shadow: none;
 }
 
-.hero h1, .hero p {
+.hero h1,
+.hero p {
   overflow: hidden;
   margin: 0 auto;
   text-align: center;
@@ -106,8 +107,15 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 /* Efecto de brillo en el texto */
@@ -126,7 +134,7 @@
     font-size: 2.5rem;
     white-space: normal;
   }
-  
+
   .hero p {
     font-size: 1.1rem;
     white-space: normal;
@@ -282,7 +290,8 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio */
   background: rgba(0, 0, 0, 0.1);
 }
 
@@ -290,7 +299,8 @@
 .videoContainer {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio */
   background: #000;
 }
 
@@ -364,33 +374,45 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+    white-space: normal;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    white-space: normal;
+  }
+
   .apodSection {
     padding: 3rem 0;
   }
-  
+
   .apodGrid {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     gap: 2rem;
+    grid-template-columns: 1fr;
   }
-  
+
   .apodTitle {
     font-size: 1.8rem;
     margin-bottom: 1.2rem;
   }
-  
+
   .apodContent {
     font-size: 1rem;
+    padding: 0 1rem;
   }
-  
+
   .apodExplanation {
     font-size: 1rem;
     margin-bottom: 2rem;
   }
-  
+
   .paragraph {
     padding-left: 1rem;
   }
-  
+
   .paragraph::before {
     width: 4px;
     height: 4px;
@@ -410,7 +432,8 @@
 }
 
 /* Loading y estados de error */
-.loading, .error {
+.loading,
+.error {
   text-align: center;
   padding: 2rem;
   background: rgba(0, 0, 0, 0.5);
@@ -430,7 +453,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .content h1 {
@@ -505,23 +530,23 @@ a.secondary {
     padding: 1.5rem;
     margin: 1rem;
   }
-  
+
   .content h1 {
     font-size: 2.5rem;
   }
-  
+
   .content p {
     font-size: 1.1rem;
   }
-  
+
   .contactForm {
     flex-direction: column;
   }
-  
+
   .contactForm button {
     width: 100%;
   }
-  
+
   .grid {
     grid-template-columns: 1fr;
   }
@@ -585,8 +610,13 @@ a.secondary {
 }
 
 @keyframes orbit {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .loadingText {
@@ -645,11 +675,9 @@ a.secondary {
   position: relative;
   width: 100%;
   padding: 6rem 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 12, 18, 0.8) 0%,
-    rgba(10, 12, 18, 0.95) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(10, 12, 18, 0.8) 0%,
+      rgba(10, 12, 18, 0.95) 100%);
   overflow: hidden;
 }
 
@@ -660,12 +688,10 @@ a.secondary {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(79, 159, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(79, 159, 255, 0.2),
+      transparent);
 }
 
 .apodGrid {
@@ -746,10 +772,12 @@ a.secondary {
   transform: translateZ(0);
 }
 
-.imageContainer, .videoContainer {
+.imageContainer,
+.videoContainer {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio */
   background: rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   overflow: hidden;
@@ -766,17 +794,16 @@ a.secondary {
   will-change: transform;
 }
 
-.imageOverlay, .videoOverlay {
+.imageOverlay,
+.videoOverlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 12, 18, 0.1) 0%,
-    rgba(10, 12, 18, 0.7) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(10, 12, 18, 0.1) 0%,
+      rgba(10, 12, 18, 0.7) 100%);
   z-index: 1;
   opacity: 0.6;
   transition: opacity 0.5s ease;
@@ -788,11 +815,9 @@ a.secondary {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(79, 159, 255, 0.1) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at center,
+      rgba(79, 159, 255, 0.1) 0%,
+      transparent 70%);
   z-index: 2;
   pointer-events: none;
   opacity: 0;
@@ -826,11 +851,9 @@ a.secondary {
   transform: translateX(-50%);
   width: 2px;
   height: 50px;
-  background: linear-gradient(
-    to bottom,
-    #4f9fff,
-    rgba(79, 159, 255, 0)
-  );
+  background: linear-gradient(to bottom,
+      #4f9fff,
+      rgba(79, 159, 255, 0));
   opacity: 0.5;
 }
 
@@ -865,12 +888,10 @@ a.secondary {
 
 .paragraphDivider {
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent);
   margin: 2rem 0;
 }
 
@@ -944,9 +965,11 @@ a.secondary {
     transform: translate(-50%, 0);
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     transform: translate(-50%, 10px);
     opacity: 0;
@@ -958,7 +981,7 @@ a.secondary {
   .apodSection {
     transition: background 0.5s ease;
   }
-  
+
   .apodSection:hover {
     background: rgba(10, 12, 18, 0.98);
   }
@@ -969,19 +992,19 @@ a.secondary {
   .apodSection {
     padding: 4rem 0;
   }
-  
+
   .apodHeader {
     margin-bottom: 3rem;
   }
-  
+
   .apodTitle {
     font-size: 2rem;
   }
-  
+
   .paragraph {
     padding-left: 1.5rem;
   }
-  
+
   .scrollForMore {
     margin-top: 3rem;
   }
