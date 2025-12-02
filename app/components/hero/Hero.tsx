@@ -47,7 +47,7 @@ export default function Hero() {
     <section className={`${styles.section} ${styles.hero}`}>
       <div className={styles.content}>
         <h1 ref={titleRef} className={styles.heroTitle}>
-          {"NASA Astronomy Picture ".split('').map((char, i) => (
+          {"Astronomy Picture ".split('').map((char, i) => (
             <span key={i} className="title-char" style={{ display: 'inline-block', opacity: 0, transform: 'translateY(20px)' }}>
               {char === ' ' ? '\u00A0' : char}
             </span>
