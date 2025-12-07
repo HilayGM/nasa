@@ -33,7 +33,7 @@
   text-align: center;
   overflow: hidden;
   position: relative;
-  background: transparent !important;
+  background: transparent;
   box-shadow: none !important;
   border: none !important;
   backdrop-filter: none !important;
@@ -107,7 +107,6 @@
 }
 
 @keyframes blink {
-
   0%,
   100% {
     opacity: 1;
@@ -218,248 +217,13 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   color: white;
-}
-
-/* ==================== */
-/* Estilos APOD Modernos */
-/* ==================== */
-
-/* Sección principal */
-.apodSection {
-  width: 100%;
-  padding: 4rem 0;
-  position: relative;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.apodGrid {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-}
-
-/* Encabezado */
-.apodHeader {
-  text-align: left;
-  margin-bottom: 1.5rem;
-}
-
-.apodDate {
-  font-size: 0.9rem;
-  color: #8a8f98;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  display: inline-block;
-}
-
-.apodTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0 0 1.5rem;
-  line-height: 1.2;
-  color: #fff;
-  max-width: 800px;
-}
-
-/* Contenedor de medios */
-.mediaWrapper {
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.mediaWrapper:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Imagen */
-.imageContainer {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;
-  /* 16:9 Aspect Ratio */
-  background: rgba(0, 0, 0, 0.1);
-}
-
-/* Video */
-.videoContainer {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;
-  /* 16:9 Aspect Ratio */
-  background: #000;
-}
-
-.media {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-/* Contenido */
-.apodContent {
-  max-width: 800px;
-  margin: 0 auto;
-  color: #e0e0e0;
-  line-height: 1.8;
-}
-
-.apodExplanation {
-  font-size: 1.1rem;
-  margin-bottom: 2.5rem;
-}
-
-.paragraph {
-  margin-bottom: 1.5rem;
-  position: relative;
-  padding-left: 1.2rem;
-}
-
-.paragraph:not(:last-child) {
-  margin-bottom: 1.8rem;
-}
-
-.paragraph::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.8em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #4f9fff;
-  opacity: 0.8;
-}
-
-/* Créditos */
-.credit {
-  font-size: 0.95rem;
-  color: #8a8f98;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.creditLabel {
-  color: #4f9fff;
-  font-weight: 500;
-}
-
-.creditName {
-  color: #b0b4c0;
-  font-style: normal;
-}
-
-/* Efectos de hover */
-.mediaWrapper:hover .media {
-  transform: scale(1.03);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
-    white-space: normal;
-  }
-
-  .hero p {
-    font-size: 1.1rem;
-    white-space: normal;
-  }
-
-  .apodSection {
-    padding: 3rem 0;
-  }
-
-  .apodGrid {
-    padding: 0 1rem;
-    gap: 2rem;
-    grid-template-columns: 1fr;
-  }
-
-  .apodTitle {
-    font-size: 1.8rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .apodContent {
-    font-size: 1rem;
-    padding: 0 1rem;
-  }
-
-  .apodExplanation {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .paragraph {
-    padding-left: 1rem;
-  }
-
-  .paragraph::before {
-    width: 4px;
-    height: 4px;
-    top: 0.7em;
-  }
-}
-
-.copyright {
-  color: rgba(255, 255, 255, 0.7);
-  font-style: italic;
-  margin: 0.5rem 0;
-}
-
-.date {
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 1.5rem;
-}
-
-/* Loading y estados de error */
-.loading,
-.error {
-  text-align: center;
-  padding: 2rem;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 12px;
-  margin: 2rem auto;
-  max-width: 600px;
-}
-
-.spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top-color: #fff;
-  animation: spin 1s ease-in-out infinite;
-  margin: 0 auto 1rem;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .content h1 {
@@ -574,114 +338,52 @@ a.secondary {
   }
 }
 
-
-/* Estilos para la sección de carga */
-.loadingContainer {
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
+.copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  margin: 0.5rem 0;
 }
 
-.loadingAnimation {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  margin-bottom: 2rem;
-}
-
-.loadingOrbit {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 2px solid rgba(79, 159, 255, 0.2);
-  border-radius: 50%;
-  animation: orbit 4s linear infinite;
-}
-
-.loadingPlanet {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  background: #4f9fff;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 20px rgba(79, 159, 255, 0.8);
-}
-
-@keyframes orbit {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.loadingText {
-  font-size: 1.2rem;
-  color: #8a8f98;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 500;
-  margin-top: 1.5rem;
-}
-
-/* Estilos para la sección de error */
-.errorContainer {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: rgba(255, 88, 88, 0.1);
-  border-radius: 12px;
-  max-width: 600px;
-  margin: 2rem auto;
-}
-
-.errorIcon {
-  font-size: 3rem;
+.date {
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 1.5rem;
 }
 
-.errorContainer h3 {
-  color: #ff5858;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+/* Loading y estados de error */
+.loading,
+.error {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 600px;
 }
 
-.retryButton {
-  background: #4f9fff;
-  color: white;
-  border: none;
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 1.5rem;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin: 0 auto 1rem;
 }
 
-.retryButton:hover {
-  background: #3a8cff;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(79, 159, 255, 0.3);
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Estilos mejorados para la sección APOD */
 .apodSection {
   position: relative;
   width: 100%;
-  padding: 6rem 0;
+  padding: 0;
   background: linear-gradient(to bottom,
-      rgba(10, 12, 18, 0.8) 0%,
-      rgba(10, 12, 18, 0.95) 100%);
+      rgba(10, 12, 18, 0) 0%,
+      rgba(10, 12, 18, 0) 100%);
   overflow: hidden;
 }
 
@@ -694,7 +396,7 @@ a.secondary {
   height: 1px;
   background: linear-gradient(90deg,
       transparent,
-      rgba(79, 159, 255, 0.2),
+      rgba(79, 158, 255, 0),
       transparent);
 }
 
@@ -980,19 +682,119 @@ a.secondary {
   }
 }
 
-/* Efectos de hover y animaciones */
-@media (hover: hover) {
-  .apodSection {
-    transition: background 0.5s ease;
+/* Estilos para la sección de carga */
+.loadingContainer {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.loadingAnimation {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 2rem;
+}
+
+.loadingOrbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(79, 159, 255, 0.2);
+  border-radius: 50%;
+  animation: orbit 4s linear infinite;
+}
+
+.loadingPlanet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: #4f9fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(79, 159, 255, 0.8);
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
   }
 
-  .apodSection:hover {
-    background: rgba(10, 12, 18, 0.98);
+  to {
+    transform: rotate(360deg);
   }
 }
 
+.loadingText {
+  font-size: 1.2rem;
+  color: #8a8f98;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}
+
+/* Estilos para la sección de error */
+.errorContainer {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 88, 88, 0.1);
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.errorIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.errorContainer h3 {
+  color: #ff5858;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.retryButton {
+  background: #4f9fff;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.retryButton:hover {
+  background: #3a8cff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(79, 159, 255, 0.3);
+}
+
+
+
 /* Responsive */
 @media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+    white-space: normal;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    white-space: normal;
+  }
+
   .apodSection {
     padding: 4rem 0;
   }
@@ -1012,4 +814,195 @@ a.secondary {
   .scrollForMore {
     margin-top: 3rem;
   }
+}
+
+/* Grid Nueva para APOD */
+.apodGridNew {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+  align-items: start;
+}
+
+.apodLeftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.apodHeaderNew {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.apodTitleHuge {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+.apodContentNew {
+  flex: 1;
+  max-width: 100%;
+  color: #e0e0e0;
+  line-height: 1.8;
+}
+
+.apodRightColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 600px;
+}
+
+.mediaWrapperNew {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mediaWrapperNew:hover {
+  transform: scale(1.02);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.mediaWrapperNew .imageContainer,
+.mediaWrapperNew .videoContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+.mediaWrapperNew .media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mediaWrapperNew:hover .media {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .apodGridNew {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .apodTitleHuge {
+    font-size: clamp(2rem, 6vw, 4rem);
+  }
+
+  .apodRightColumn {
+    min-height: 400px;
+  }
+
+  .mediaWrapperNew {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .apodGridNew {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .apodTitleHuge {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .apodRightColumn {
+    min-height: 300px;
+  }
+
+  .apodContentNew {
+    font-size: 0.95rem;
+  }
+}
+
+.Touchere {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-align: center;
+  z-index: 20;
+  text-shadow: 0 0 30px rgba(79, 159, 255, 0.6);
+  animation: float 3s ease-in-out infinite, glow 2s ease-in-out infinite;
+  cursor: pointer;
+  user-select: none;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+
+  50% {
+    transform: translate(-50%, -55%);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 30px rgba(79, 159, 255, 0.6), 0 0 60px rgba(79, 159, 255, 0.3);
+  }
+
+  50% {
+    text-shadow: 0 0 40px rgba(79, 159, 255, 0.8), 0 0 80px rgba(79, 159, 255, 0.5);
+  }
+}
+
+.Touchere:hover {
+  animation: float 2s ease-in-out infinite, glow 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .Touchere {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    letter-spacing: 1px;
+  }
+}
+
+.v0Section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
 }

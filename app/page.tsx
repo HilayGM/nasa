@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import Cards from "./components/cards/Cards";
 import Hero from "./components/hero/Hero";
 import FeaturedApod from "./components/featured/FeaturedApod";
+import V0Nasa from "./components/v0/v0Nasa";
 
 interface NasaData {
   url: string;
@@ -72,9 +73,14 @@ export default function Home() {
           <>
             <FeaturedApod data={featuredApod} />
 
+
+            <section className={styles.v0Section}>
+
+              <V0Nasa />
+            </section>
             {/* Sección de Cards (Grid) */}
             <section className={styles.apodSection}>
-               <Cards data={gridData} />
+              <Cards data={gridData} />
             </section>
           </>
         )}

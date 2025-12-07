@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import styles from '../../page.module.css';
+import V0ParticleAnimation from '../v0/v0-particle-animation';
 
 export default function Hero() {
   const titleRef = useRef<HTMLDivElement>(null);
@@ -44,7 +45,11 @@ export default function Hero() {
   }, []);
 
   return (
+
+    
     <section className={`${styles.section} ${styles.hero}`}>
+
+
       <div className={styles.content}>
         <h1 ref={titleRef} className={styles.heroTitle}>
           {"Astronomy Picture ".split('').map((char, i) => (

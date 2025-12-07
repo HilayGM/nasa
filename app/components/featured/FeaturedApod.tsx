@@ -60,59 +60,63 @@ export default function FeaturedApod({ data }: FeaturedApodProps) {
 
   return (
     <section id="apod" className={styles.apodSection}>
-      <div className={styles.apodGrid}>
-        <div className={styles.apodHeader}>
-          {data.date && (
-            <span className={styles.apodDate} ref={apodDateRef}>
-              {new Date(data.date).toLocaleDateString('es-ES', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </span>
-          )}
-          <h2 className={styles.apodTitle} ref={apodTitleRef}>
-            {data.title}
-          </h2>
-        </div>
-        
-        <div className={styles.mediaWrapper} ref={mediaWrapperRef}>
-          {data.media_type === 'image' ? (
-            <div className={styles.imageContainer}>
-              <img
-                src={data.url}
-                alt={data.title}
-                className={styles.media}
-                loading="lazy"
-              />
-            </div>
-          ) : data.media_type === 'video' ? (
-            <div className={styles.videoContainer}>
-              <iframe
-                src={data.url}
-                title={data.title}
-                className={styles.media}
-                allowFullScreen
-              />
-            </div>
-          ) : null}
-        </div>
-        
-        <div className={styles.apodContent} ref={apodContentRef}>
-          <div className={styles.apodExplanation}>
-            {data.explanation.split('\n\n').map((paragraph, i) => (
-              <p key={i} className={styles.paragraph}>
-                {paragraph}
-              </p>
-            ))}
+      <div className={styles.apodGridNew}>
+        <div className={styles.apodLeftColumn}>
+          <div className={styles.apodHeaderNew}>
+            {data.date && (
+              <span className={styles.apodDate} ref={apodDateRef}>
+                {new Date(data.date).toLocaleDateString('es-ES', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </span>
+            )}
+            <h2 className={styles.apodTitleHuge} ref={apodTitleRef}>
+              {data.title}
+            </h2>
           </div>
-          
-          {data.copyright && (
-            <div className={styles.credit}>
-              <span className={styles.creditLabel}>Crédito: </span>
-              <span className={styles.creditName}>{data.copyright}</span>
+
+          <div className={styles.apodContentNew} ref={apodContentRef}>
+            <div className={styles.apodExplanation}>
+              {data.explanation.split('\n\n').map((paragraph, i) => (
+                <p key={i} className={styles.paragraph}>
+                  {paragraph}
+                </p>
+              ))}
             </div>
-          )}
+            
+            {data.copyright && (
+              <div className={styles.credit}>
+                <span className={styles.creditLabel}>Crédito: </span>
+                <span className={styles.creditName}>{data.copyright}</span>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className={styles.apodRightColumn}>
+          <div className={styles.mediaWrapperNew} ref={mediaWrapperRef}>
+            {data.media_type === 'image' ? (
+              <div className={styles.imageContainer}>
+                <img
+                  src={data.url}
+                  alt={data.title}
+                  className={styles.media}
+                  loading="lazy"
+                />
+              </div>
+            ) : data.media_type === 'video' ? (
+              <div className={styles.videoContainer}>
+                <iframe
+                  src={data.url}
+                  title={data.title}
+                  className={styles.media}
+                  allowFullScreen
+                />
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </section>

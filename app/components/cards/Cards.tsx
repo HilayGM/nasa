@@ -58,3 +58,4 @@ export default function Cards({ data }: CardsProps) {
     </div>
   );
 }
+
