@@ -2,6 +2,10 @@
 
 [![AI Powered](https://img.shields.io/badge/AI-Powered-blue?style=for-the-badge&logo=openai&logoColor=white)](https://deepmind.google/technologies/gemini/)
 
+[![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
+
+[![v0.dev](https://img.shields.io/badge/v0.dev-black?style=for-the-badge&logo=vercel&logoColor=white)](https://v0.dev)
+
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
