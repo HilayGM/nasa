@@ -1,3 +1,8 @@
+[![Gemini AI](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://deepmind.google/technologies/gemini/)
+
+[![AI Powered](https://img.shields.io/badge/AI-Powered-blue?style=for-the-badge&logo=openai&logoColor=white)](https://deepmind.google/technologies/gemini/)
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
