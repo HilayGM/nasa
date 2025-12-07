@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # NASA APOD Explorer
 =======
 [![Gemini AI](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://deepmind.google/technologies/gemini/)
@@ -11,7 +11,7 @@
 
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
->>>>>>> bdf4e35b790542f6eeaa3482ecd12147e4dcc97a
+
 
 A modern, interactive web application built with [Next.js](https://nextjs.org) that explores the cosmos using NASA's Astronomy Picture of the Day (APOD) API. This project features stunning visuals, smooth animations, and interactive elements to provide an engaging user experience.
 
@@ -100,12 +100,6 @@ The project currently uses a hardcoded demo API key from NASA. For production or
 └── documentation/       # Project documentation
 ```
 
-## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 
