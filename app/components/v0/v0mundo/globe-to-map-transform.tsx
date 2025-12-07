@@ -25,7 +25,8 @@ export function InteractiveGlobe() {
       try {
         const response = await fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
         const world: any = await response.json()
-        const countries = feature(world, world.objects.countries).features
+        const countriesFeature = feature(world, world.objects.countries) as any
+        const countries = Array.isArray(countriesFeature.features) ? countriesFeature.features : [countriesFeature]
         setWorldData(countries)
       } catch (error) {
         const fallbackData = [

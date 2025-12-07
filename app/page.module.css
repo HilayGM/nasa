@@ -843,7 +843,7 @@ a.secondary {
 
 .apodTitleHuge {
   font-size: clamp(3rem, 8vw, 6.5rem);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 1.1;
   color: #fff;
   margin: 0;
@@ -990,19 +990,4 @@ a.secondary {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     letter-spacing: 1px;
   }
-}
-
-.v0Section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-}
-
-.main {
-  position: relative;
-  z-index: 1;
 }
